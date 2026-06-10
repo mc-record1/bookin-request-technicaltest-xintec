@@ -1,0 +1,174 @@
+{
+  "info": {
+    "_postman_id": "93bca389-3055-4149-b356-87f784d97dd2",
+    "name": "Xintec",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2833901"
+  },
+  "item": [
+    {
+      "name": "BookingRequests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings?taxId=1123456",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "bookings"
+          ],
+          "query": [
+            {
+              "key": "taxId",
+              "value": "1123456"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create BookingRequest",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"bookingCode\": \"BC00012355\",\r\n    \"issueDate\": \"2024-05-03\",\r\n    \"expirationDate\": \"2026-01-02\",\r\n    \"currency\": \"CLP\",\r\n    \"incotermCode\": \"FOB\",\r\n    \"freightMode\": \"AIR\",\r\n    \"originCountry\": \"JPN\",\r\n    \"destinationCountry\": \"CHL\",\r\n    \"fobValue\": 99.00,\r\n    \"status\": \"DRAFT\",\r\n    \"createdAt\": \"2026-06-08T01:46:31\",\r\n    \"active\": true,\r\n    \"supplier\": {\r\n        \"id\": 16,\r\n        \"name\": \"ShenLong\",\r\n        \"taxId\": \"1123456\",\r\n        \"country\": \"CHN\",\r\n        \"address\": \"Changan 777, pekin\",\r\n        \"contactEmail\": \"contact@shenlong.cn\"\r\n    },\r\n    \"items\": [\r\n        {\r\n            \"id\": 3,\r\n            \"sku\": \"2600209999\",\r\n            \"description\": \"Producto de piedra\",\r\n            \"quantity\": 25,\r\n            \"unitPrice\": 500.00,\r\n            \"totalMount\": 0.00\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BookingRequest by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "bookings",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update BookingRequest",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"issueDate\": \"2024-05-03\",\r\n  \"expirationDate\":\"2026-12-31\",\r\n  \"currency\":\"CLP\",\r\n  \"fobValue\":50.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "bookings",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BookingRequest cambiar estado",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"issueDate\": \"2024-05-03\",\r\n  \"expirationDate\":\"2026-12-31\",\r\n  \"currency\":\"CLP\",\r\n  \"fobValue\":50.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings/2/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "bookings",
+            "2",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BookingRequest Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "bookings",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
